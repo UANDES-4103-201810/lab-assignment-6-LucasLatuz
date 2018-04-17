@@ -3,10 +3,17 @@ class SessionsController < ApplicationController
 	end
 
 	def create
-		#complete this method
+		if is_user_logged_in?
+			redirect_to '/users/%'%[current_user_id]
+			flash[:notice]= "Correctly logged in"
+		else
+			redirect_to users_url
+			flash[:notice]= "Something didnt work"
+		end
 	end
 
 	def destroy
-		#complete this method
+		session.delete(:user_id)
+		@current_user = nil
 	end
 end
