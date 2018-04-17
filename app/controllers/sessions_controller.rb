@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
 	def create
 		if is_user_logged_in?
-			redirect_to '/users/%'%[current_user_id]
+			redirect_to user_path(:user_id)
 			flash[:notice]= "Correctly logged in"
 		else
 			redirect_to users_url

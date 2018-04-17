@@ -1978,3 +1978,53 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 163ms (Views: 156.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-04-17 14:14:22 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 220ms (Views: 208.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-04-17 14:14:32 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9qHckLhCIVDrXNa4ePXVVDgIf2IHjv1J4Gavrjjgzayh2gNI03fks6X3LdsoDcKNSv1/FsLnC3tWv4NgebYOeA==", "session"=>{"email"=>"mahu@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+Redirected to http://localhost:3000/
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"users"}, missing required keys: [:id]):
+  
+app/controllers/sessions_controller.rb:7:in `create'
+Started POST "/login" for 127.0.0.1 at 2018-04-17 14:15:30 -0300
+Processing by SessionsController#create as HTML
+Started GET "/" for 127.0.0.1 at 2018-04-17 14:15:40 -0300
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9qHckLhCIVDrXNa4ePXVVDgIf2IHjv1J4Gavrjjgzayh2gNI03fks6X3LdsoDcKNSv1/FsLnC3tWv4NgebYOeA==", "session"=>{"email"=>"mahu@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+Redirected to http://localhost:3000/
+Redirected to 
+Completed 500 Internal Server Error in 1ms
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/sessions_controller.rb:7:in `create'
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 19ms (Views: 17.5ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-04-17 14:15:49 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Gvftpy/mdCr3cXWG+QPmHNjJisbwaa0BDPib0SGjC+JNjDJ/RNOxybnajuWp+/HFqjyKsjUAWzO6IbcfYPXINg==", "session"=>{"email"=>"mahu@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+Redirected to http://localhost:3000/
+Redirected to 
+Completed 500 Internal Server Error in 1ms
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/sessions_controller.rb:7:in `create'
